@@ -5,6 +5,7 @@
     text-align: right;
     position: fixed;
     box-shadow: 0 5px 8px #162521;
+    z-index: 1;
 }
     .title h1 {
         text-align: center;

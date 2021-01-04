@@ -11,7 +11,7 @@
         padding: 5px;
         box-shadow: 0 0 6px #C0E0DE;
     }
-    .contacts, .aboutMe {
+    .contacts, .aboutMe, .hardSkills, .softSkills {
         max-width: 374px;
         width: 80%;
         background-color: #3C474B;
@@ -53,3 +53,8 @@
         margin: 10px;
         text-align: left;
     }
+        .mySkills {
+            display: flex;
+            align-items: center;
+            color: #C0E0DE;
+        }

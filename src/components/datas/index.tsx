@@ -8,6 +8,69 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import CircularProgress, { CircularProgressProps } from '@material-ui/core/CircularProgress';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+
+function CircularProgressWithLabel(props: CircularProgressProps & { value: number }) {
+    return (
+        <Box position="relative" display="inline-flex">
+            <CircularProgress variant="determinate" {...props} />
+            <Box
+                top={0}
+                left={0}
+                bottom={0}
+                right={0}
+                position="absolute"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+            >
+                <Typography variant="caption" component="div" style={{color: "#c0e0de"}}>{`${Math.round(
+                    props.value,
+                )}%`}</Typography>
+            </Box>
+        </Box>
+    );
+}
+
+interface Skills {
+    name: string;
+    skill: number;
+}
+
+const hardSkills: Skills[] = [
+    {name: "HTML5", skill: 100},
+    {name: "CSS3", skill: 90},
+    {name: "JavaScript (ES6+)", skill: 90},
+    {name: "TypeScript", skill: 85},
+    {name: "React", skill: 100},
+    {name: "Redux-Thunk", skill: 80},
+    {name: "Git", skill: 80},
+    {name: "Responsive", skill: 95},
+    {name: "Atomic Design", skill: 80},
+    {name: "Scrum", skill: 75},
+    {name: "Linux", skill: 85},
+    {name: "Trello", skill: 80},
+    {name: "Notion", skill: 75},
+    {name: "Slack", skill: 100},
+    {name: "Angular", skill: 50},
+    {name: "NextJS", skill: 40},
+    {name: "VueJS", skill: 55},
+]
+
+const softSkills: Skills[]  = [
+    {name: "Liderança", skill: 100},
+    {name: "Confiança", skill: 100},
+    {name: "Pontualidade", skill: 100},
+    {name: "Iniciativa", skill: 100},
+    {name: "Empatia", skill: 100},
+    {name: "Bom Humor", skill: 100},
+    {name: "Organização", skill: 100},
+    {name: "Maturidade", skill: 100},
+    {name: "Resiliência", skill: 95},
+    {name: "Paciência", skill: 100},
+]
 
 export const Datas: React.FC = () => {
     return (
@@ -34,14 +97,31 @@ export const Datas: React.FC = () => {
                     com amigos em jogos online inspirados em Habbo Hotel, que usávamos Flash, da Adobe, e C#.
                     Na vida adulta, ao entrar na faculdade de Engenharias, tive contato com Python, e logo com
                     JavaScript. Hoje eu tenho 20 anos, e minha especialidade é Desenvolvimento Web em React (principal)
-                    , Angular, Next e Vue.
+                    , adaptável para Angular, Next e Vue.
                 </p>
                 <h3 style={{color: "#C0E0DE"}}>Metas para o futuro: </h3>
                 <p className="bodyAboutMe">
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
-                    estudando Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
+                    estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
                 </p>
             </div>
+            <div className="hardSkills">
+                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>HardSkills:</h1>
+                {hardSkills.map((skill:{name: string, skill: number}, index: number) => (
+                    <p className="mySkills" key={index}>
+                        {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                    </p>
+                ))}
+            </div>
+            <div className="softSkills">
+                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>SoftSkills:</h1>
+                {softSkills.map((skill:{name: string, skill: number}, index: number) => (
+                    <p className="mySkills" key={index}>
+                        {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                    </p>
+                ))}
+            </div>
+
         </div>
     )
 }
