@@ -1,0 +1,50 @@
+.dataBox {
+    padding: 50px 10px 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .profilePhoto {
+        width: 200px;
+        border-radius: 50%;
+        border: 2px solid #C0E0DE;
+        padding: 5px;
+        box-shadow: 0 0 6px #C0E0DE;
+    }
+    .contacts {
+        max-width: 374px;
+        width: 80%;
+        background-color: #3C474B;
+        margin: 50px 10px 50px 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 10px;
+    }
+    .link {
+        text-decoration: none;
+        color: #C0E0DE;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: .3s;
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+        .link:hover {
+            color: lightskyblue;
+            border-bottom: 1px solid lightskyblue;
+        }
+        .linkEmail {
+            color: #C0E0DE;
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+    .instagramQR {
+        max-width: 354px;
+        width: 90%;
+        align-self: center;
+        margin-top: 20px;
+    }

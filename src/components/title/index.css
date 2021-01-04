@@ -1,0 +1,16 @@
+.title {
+    height: 100px;
+    width: 100%;
+    background-color: #3C474B;
+    text-align: right;
+    position: fixed;
+    box-shadow: 0 5px 8px #162521;
+}
+    .title h1 {
+        text-align: center;
+        margin: 0;
+        color: #C0E0DE;
+    }
+.drawer {
+    background: #3C474B !important;
+}
