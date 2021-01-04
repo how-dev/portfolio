@@ -16,6 +16,10 @@ import NaturePeopleIcon from '@material-ui/icons/NaturePeople';
 import WorkIcon from '@material-ui/icons/Work';
 import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
 
+import { Link, Element } from 'react-scroll';
+
+
+
 const useStyles = makeStyles({
     list: {
         width: 250,
@@ -61,55 +65,73 @@ export const Title: React.FC = () => {
         >
 
             <h1 style={{textAlign: "center", color: "#C0E0DE"}}>Sumário:</h1>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><ContactsIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="Contatos" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><FaceIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="Quem sou eu" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><PersonIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="HardSkills" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><NaturePeopleIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="SoftSkills" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><WorkIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="Trabalhos" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem button>
-                    <ListItemIcon><VerticalAlignTopIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
-                    <ListItemText primary="Ir ao topo" style={{color: "#C0E0DE"}}/>
-                </ListItem>
-            </List>
+            <Link activeClass="active" to="contacts" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon><ContactsIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+                        <ListItemText primary="Contatos" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
+            <Link activeClass="active" to="aboutMe" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+
+                            <ListItemIcon><FaceIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+
+                        <ListItemText primary="Quem sou eu" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
+            <Link activeClass="active" to="hardskills" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon><PersonIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+                        <ListItemText primary="HardSkills" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
+            <Link activeClass="active" to="softskills" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon><NaturePeopleIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+                        <ListItemText primary="SoftSkills" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
+            <Link activeClass="active" to="works" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon><WorkIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+                        <ListItemText primary="Trabalhos" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
+            <Link activeClass="active" to="top" spy={true} smooth={true} duration={500}>
+                <List>
+                    <ListItem button>
+                        <ListItemIcon><VerticalAlignTopIcon style={{color: "#C0E0DE"}}/></ListItemIcon>
+                        <ListItemText primary="Ir ao topo" style={{color: "#C0E0DE"}}/>
+                    </ListItem>
+                </List>
+            </Link>
         </div>
     );
+
+
 
     return (
         <>
             <div className="title">
                 <Button onClick={toggleDrawer("right", true)}><DehazeIcon style={{color: "white",}}/></Button>
                 <h1>Desenvolvedor React</h1>
-                <Drawer classes={{ paper: "drawer" }}anchor="right" open={state["right"]} onClose={toggleDrawer("right", false)}>
+                <Drawer classes={{ paper: "drawer" }} anchor="right" open={state["right"]} onClose={toggleDrawer("right", false)}>
                     {list("right")}
                 </Drawer>
             </div>
-            <div style={{height: 100}}/>
+            <Element name="top">
+                <div style={{height: 100}}/>
+            </Element>
         </>
     );
 }

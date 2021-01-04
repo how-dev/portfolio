@@ -12,7 +12,83 @@ import CircularProgress, { CircularProgressProps } from '@material-ui/core/Circu
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-function CircularProgressWithLabel(props: CircularProgressProps & { value: number }) {
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import MobileStepper from '@material-ui/core/MobileStepper';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+
+import KenzieHub from "./worksImages/kenziehub.png";
+import Pokedex from "./worksImages/pokedex.png";
+import Conan from "./worksImages/conan.png";
+import pythonLambda from "./worksImages/pythonLambda.png";
+import hinodeReact from "./worksImages/hinodeReact.png";
+
+import { Element } from 'react-scroll';
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const tutorialSteps = [
+    {
+        label: 'KenzieHub - React + Redux',
+        imgPath: KenzieHub,
+    },
+    {
+        label: 'Pokedex - React',
+        imgPath: Pokedex,
+    },
+    {
+        label: 'Conan - React + Redux + TypeScriptX (.tsx)',
+        imgPath: Conan,
+    },
+    {
+        label: 'Gráfico 2D de trajetória de partícula - Python',
+        imgPath: pythonLambda,
+    },
+    {
+        label: 'Site de produtos de beleza - React + Redux',
+        imgPath: hinodeReact,
+    },
+];
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        maxWidth: 385,
+        width: "90%",
+        flexGrow: 1,
+        marginTop: 20,
+    },
+    header: {
+        display: 'flex',
+        alignItems: 'center',
+        height: 50,
+        paddingLeft: theme.spacing(4),
+        background: "#3C474B",
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        color: "#c0e0de",
+        padding: "0 !important",
+        justifyContent: "center",
+    },
+    img: {
+        height: 255,
+        display: 'block',
+        maxWidth: 400,
+        overflow: 'hidden',
+        width: '100%',
+    },
+    inferior: {
+        background: "#3C474B",
+        color: "#c0e0de",
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+    },
+}));
+
+const CircularProgressWithLabel = (props: CircularProgressProps & { value: number }) => {
     return (
         <Box position="relative" display="inline-flex">
             <CircularProgress variant="determinate" {...props} />
@@ -73,11 +149,29 @@ const softSkills: Skills[]  = [
 ]
 
 export const Datas: React.FC = () => {
+    const classes = useStyles();
+    const theme = useTheme();
+    const [activeStep, setActiveStep] = React.useState(0);
+    const maxSteps = tutorialSteps.length;
+
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleStepChange = (step: number) => {
+        setActiveStep(step);
+    };
     return (
         <div className="dataBox">
             <img alt="profile" src={profilePhoto} className="profilePhoto" />
             <h1 style={{color: "#C0E0DE"}}>Howard Ricardo</h1>
-            <span style={{color: "#C0E0DE"}}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
+            <Element name="contacts">
+                <span style={{color: "#C0E0DE"}}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
+            </Element>
             <div className="contacts">
                 <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>Contatos:</h1>
                 <a className="link" href="https://www.linkedin.com/in/how-dev/" rel="noreferrer" target="_blank"><LinkedInIcon/>Linkedin: @how-dev </a>
@@ -87,6 +181,8 @@ export const Datas: React.FC = () => {
                 <a className="link" href="https://github.com/how-dev" rel="noreferrer" target="_blank"><GitHubIcon />Github: how-dev</a>
                 <span className="linkEmail" ><EmailIcon/>Email: howard.medeiros@gmail.com</span>
                 <img alt="instagramQR" src={instagramQR} className="instagramQR" />
+                <Element name="aboutMe">
+                </Element>
             </div>
             <div className="aboutMe">
                 <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>Quem sou eu:</h1>
@@ -104,24 +200,74 @@ export const Datas: React.FC = () => {
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
                     estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
                 </p>
+                <Element name="hardskills">
+                </Element>
             </div>
+
             <div className="hardSkills">
                 <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>HardSkills:</h1>
+
                 {hardSkills.map((skill:{name: string, skill: number}, index: number) => (
-                    <p className="mySkills" key={index}>
-                        {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
-                    </p>
+                    <div key={index}>
+                        <div className="mySkills" key={index}>
+                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                        </div><br/>
+                    </div>
                 ))}
+                <Element name="softskills">
+                </Element>
             </div>
             <div className="softSkills">
                 <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>SoftSkills:</h1>
                 {softSkills.map((skill:{name: string, skill: number}, index: number) => (
-                    <p className="mySkills" key={index}>
-                        {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
-                    </p>
+                    <div key={index}>
+                        <div className="mySkills" >
+                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                        </div><br />
+                    </div>
                 ))}
+                <Element name="works">
+                </Element>
             </div>
-
+            <h1 style={{color: "#C0E0DE"}}>Trabalhos: </h1>
+            <div className={classes.root}>
+                <Paper square elevation={0} className={classes.header}>
+                    <Typography>{tutorialSteps[activeStep].label}</Typography>
+                </Paper>
+                <AutoPlaySwipeableViews
+                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                    index={activeStep}
+                    onChangeIndex={handleStepChange}
+                    enableMouseEvents
+                >
+                    {tutorialSteps.map((step, index) => (
+                        <div key={step.label}>
+                            {Math.abs(activeStep - index) <= 2 ? (
+                                <img className={classes.img} src={step.imgPath} alt={step.label} />
+                            ) : null}
+                        </div>
+                    ))}
+                </AutoPlaySwipeableViews>
+                <MobileStepper
+                    className={classes.inferior}
+                    steps={maxSteps}
+                    position="static"
+                    variant="text"
+                    activeStep={activeStep}
+                    nextButton={
+                        <Button style={{color: "#c0e0de"}} size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+                            Next
+                            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+                        </Button>
+                    }
+                    backButton={
+                        <Button style={{color: "#c0e0de"}} size="small" onClick={handleBack} disabled={activeStep === 0}>
+                            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                            Back
+                        </Button>
+                    }
+                />
+            </div>
         </div>
     )
 }
