@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./index.css";
 import profilePhoto from "./profile.jpg";
 import instagramQR from "./how.dev_nametag.png";
@@ -28,6 +28,7 @@ import pythonLambda from "./worksImages/pythonLambda.png";
 import hinodeReact from "./worksImages/hinodeReact.png";
 
 import { Element } from 'react-scroll';
+import {useSelector} from "react-redux";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -80,15 +81,10 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         width: '100%',
     },
-    inferior: {
-        background: "#3C474B",
-        color: "#c0e0de",
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-    },
 }));
 
 const CircularProgressWithLabel = (props: CircularProgressProps & { value: number }) => {
+    const darkTheme = useSelector((state: {color: boolean}) => state.color);
     return (
         <Box position="relative" display="inline-flex">
             <CircularProgress variant="determinate" {...props} />
@@ -102,7 +98,7 @@ const CircularProgressWithLabel = (props: CircularProgressProps & { value: numbe
                 alignItems="center"
                 justifyContent="center"
             >
-                <Typography variant="caption" component="div" style={{color: "#c0e0de"}}>{`${Math.round(
+                <Typography variant="caption" component="div" style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}>{`${Math.round(
                     props.value,
                 )}%`}</Typography>
             </Box>
@@ -149,6 +145,50 @@ const softSkills: Skills[]  = [
 ]
 
 export const Datas: React.FC = () => {
+    const darkTheme = useSelector((state: {color: boolean}) => state.color);
+    const [allTheme, setAllTheme] = React.useState({
+        primary: "HowardTitleEscuro",
+        secondary: "link",
+        email: "linkEmail",
+        profilePhoto: "profilePhoto",
+        boxTitle: "boxTitle",
+        bodyAboutMe: "bodyAboutMe",
+        mySkills: "mySkills",
+        geralBox: "geralBox",
+        inferior: "inferior",
+        inferiorTitle: "inferiorTitle"
+    })
+
+    React.useEffect(() => {
+        if (darkTheme) {
+            setAllTheme({
+                primary: "HowardTitleClaro",
+                secondary: "linkClaro",
+                email: "linkEmailClaro",
+                profilePhoto: "profilePhotoClaro",
+                boxTitle: "boxTitleClaro",
+                bodyAboutMe: "bodyAboutMeClaro",
+                mySkills: "mySkillsClaro",
+                geralBox: "geralBoxClaro",
+                inferior: "inferiorClaro",
+                inferiorTitle: "inferiorTitleClaro"
+            })
+        } else {
+            setAllTheme({
+                primary: "HowardTitleEscuro",
+                secondary: "link",
+                email: "linkEmail",
+                profilePhoto: "profilePhoto",
+                boxTitle: "boxTitle",
+                bodyAboutMe: "bodyAboutMe",
+                mySkills: "mySkills",
+                geralBox: "geralBox",
+                inferior: "inferior",
+                inferiorTitle: "inferiorTitle"
+            })
+        }
+    }, [darkTheme])
+
     const classes = useStyles();
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
@@ -167,26 +207,26 @@ export const Datas: React.FC = () => {
     };
     return (
         <div className="dataBox">
-            <img alt="profile" src={profilePhoto} className="profilePhoto" />
-            <h1 style={{color: "#C0E0DE"}}>Howard Ricardo</h1>
+            <img alt="profile" src={profilePhoto} className={allTheme.profilePhoto} />
+            <h1 className={allTheme.primary}>Howard Ricardo</h1>
             <Element name="contacts">
-                <span style={{color: "#C0E0DE"}}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
+                <span className={allTheme.primary}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
             </Element>
-            <div className="contacts">
-                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>Contatos:</h1>
-                <a className="link" href="https://www.linkedin.com/in/how-dev/" rel="noreferrer" target="_blank"><LinkedInIcon/>Linkedin: @how-dev </a>
-                <a className="link" href="https://www.instagram.com/how.dev/" rel="noreferrer" target="_blank"><InstagramIcon/>Instagram: @how.dev</a>
-                <a className="link" href="https://www.facebook.com/howard.ricardo.9" rel="noreferrer" target="_blank"><FacebookIcon/>Facebook: Howard</a>
-                <a className="link" href="https://api.whatsapp.com/send?phone=5561983089950&text=Ol%C3%A1!%20Eu%20gostaria%20de%20falar%20sobre%20trabalho." rel="noreferrer" target="_blank"><WhatsAppIcon/>WhatsApp: (61) 98308-9950</a>
-                <a className="link" href="https://github.com/how-dev" rel="noreferrer" target="_blank"><GitHubIcon />Github: how-dev</a>
-                <span className="linkEmail" ><EmailIcon/>Email: howard.medeiros@gmail.com</span>
+            <div className={allTheme.geralBox}>
+                <h1 className={allTheme.boxTitle}>Contatos:</h1>
+                <a className={allTheme.secondary} href="https://www.linkedin.com/in/how-dev/" rel="noreferrer" target="_blank"><LinkedInIcon/>Linkedin: @how-dev </a>
+                <a className={allTheme.secondary} href="https://www.instagram.com/how.dev/" rel="noreferrer" target="_blank"><InstagramIcon/>Instagram: @how.dev</a>
+                <a className={allTheme.secondary} href="https://www.facebook.com/howard.ricardo.9" rel="noreferrer" target="_blank"><FacebookIcon/>Facebook: Howard</a>
+                <a className={allTheme.secondary} href="https://api.whatsapp.com/send?phone=5561983089950&text=Ol%C3%A1!%20Eu%20gostaria%20de%20falar%20sobre%20trabalho." rel="noreferrer" target="_blank"><WhatsAppIcon/>WhatsApp: (61) 98308-9950</a>
+                <a className={allTheme.secondary} href="https://github.com/how-dev" rel="noreferrer" target="_blank"><GitHubIcon />Github: how-dev</a>
+                <span className={allTheme.email} ><EmailIcon/>Email: howard@kenzie.com.br</span>
                 <img alt="instagramQR" src={instagramQR} className="instagramQR" />
                 <Element name="aboutMe">
                 </Element>
             </div>
-            <div className="aboutMe">
-                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>Quem sou eu:</h1>
-                <p className="bodyAboutMe">
+            <div className={allTheme.geralBox}>
+                <h1 className={allTheme.boxTitle}>Quem sou eu:</h1>
+                <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Desde criança eu sempre fui apaixonado por programação e tecnologia.
                     Meu pai trabalha com computação e sempre me ensinou lógica de programação desde pequeno.
                     Aos 7 anos eu já programava jogos em RPG Maker VX/XP. Na minha adolescência, trabalhei
@@ -195,8 +235,8 @@ export const Datas: React.FC = () => {
                     JavaScript. Hoje eu tenho 20 anos, e minha especialidade é Desenvolvimento Web em React (principal)
                     , adaptável para Angular, Next e Vue.
                 </p>
-                <h3 style={{color: "#C0E0DE"}}>Metas para o futuro: </h3>
-                <p className="bodyAboutMe">
+                <h3 className={allTheme.primary}>Metas para o futuro: </h3>
+                <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
                     estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
                 </p>
@@ -204,34 +244,34 @@ export const Datas: React.FC = () => {
                 </Element>
             </div>
 
-            <div className="hardSkills">
-                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>HardSkills:</h1>
+            <div className={allTheme.geralBox}>
+                <h1 className={allTheme.boxTitle}>HardSkills:</h1>
 
                 {hardSkills.map((skill:{name: string, skill: number}, index: number) => (
                     <div key={index}>
-                        <div className="mySkills" key={index}>
-                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                        <div className={allTheme.mySkills} key={index}>
+                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
                         </div><br/>
                     </div>
                 ))}
                 <Element name="softskills">
                 </Element>
             </div>
-            <div className="softSkills">
-                <h1 style={{color: "#C0E0DE", margin: 0, marginBottom: 20}}>SoftSkills:</h1>
+            <div className={allTheme.geralBox}>
+                <h1 className={allTheme.boxTitle}>SoftSkills:</h1>
                 {softSkills.map((skill:{name: string, skill: number}, index: number) => (
                     <div key={index}>
-                        <div className="mySkills" >
-                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={{color: "#c0e0de"}}/>
+                        <div className={allTheme.mySkills} >
+                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
                         </div><br />
                     </div>
                 ))}
                 <Element name="works">
                 </Element>
             </div>
-            <h1 style={{color: "#C0E0DE"}}>Trabalhos: </h1>
+            <h1 className={allTheme.primary}>Trabalhos: </h1>
             <div className={classes.root}>
-                <Paper square elevation={0} className={classes.header}>
+                <Paper square elevation={0} className={allTheme.inferiorTitle}>
                     <Typography>{tutorialSteps[activeStep].label}</Typography>
                 </Paper>
                 <AutoPlaySwipeableViews
@@ -249,19 +289,19 @@ export const Datas: React.FC = () => {
                     ))}
                 </AutoPlaySwipeableViews>
                 <MobileStepper
-                    className={classes.inferior}
+                    className={allTheme.inferior}
                     steps={maxSteps}
                     position="static"
                     variant="text"
                     activeStep={activeStep}
                     nextButton={
-                        <Button style={{color: "#c0e0de"}} size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+                        <Button style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}} size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
                             Next
                             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
                         </Button>
                     }
                     backButton={
-                        <Button style={{color: "#c0e0de"}} size="small" onClick={handleBack} disabled={activeStep === 0}>
+                        <Button style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}} size="small" onClick={handleBack} disabled={activeStep === 0}>
                             {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
                             Back
                         </Button>

@@ -15,5 +15,12 @@ code {
 #root {
   height: 100%;
   background-attachment: fixed;
-  background-color: #162521;
+}
+.mudatemaEscuro {
+  background: #162521;
+  transition: .5s;
+}
+.mudatemaClaro {
+  background: #C2B8B2;
+  transition: .5s;
 }

@@ -1,17 +1,40 @@
-.title {
+.escuro {
     height: 100px;
     width: 100%;
-    background-color: #3C474B;
     text-align: right;
+    background: #3C474B;
     position: fixed;
     box-shadow: 0 5px 8px #162521;
     z-index: 1;
+    transition: .5s;
 }
-    .title h1 {
+.claro {
+    height: 100px;
+    width: 100%;
+    text-align: right;
+    background: #8A716A;
+    position: fixed;
+    box-shadow: 0 5px 8px #162521;
+    z-index: 1;
+    transition: .5s;
+}
+    .escuro h1 {
         text-align: center;
         margin: 0;
         color: #C0E0DE;
+        transition: .3s;
+    }
+    .claro h1 {
+        text-align: center;
+        margin: 0;
+        color: #C2B8B2;
+        transition: .3s;
     }
 .drawer {
     background: #3C474B !important;
+    transition: .5s;
+}
+.drawerClaro {
+    background: #8A716A !important;
+    transition: .5s;
 }

@@ -2,6 +2,13 @@
     width: 100%;
     background: #3C474B;
     height: 100px;
+    transition: .5s;
+}
+.footerClaro {
+    width: 100%;
+    background: #8A716A;
+    height: 100px;
+    transition: .5s;
 }
     .item {
         display: flex;
@@ -9,6 +16,14 @@
         justify-content: center;
         cursor: pointer;
         color: #C0E0DE;
+        transition: .3s;
+    }
+    .itemClaro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #C2B8B2;
         transition: .3s;
     }
     .item:hover {
