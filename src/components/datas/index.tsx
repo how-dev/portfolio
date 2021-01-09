@@ -235,7 +235,7 @@ export const Datas: React.FC = () => {
                     JavaScript. Hoje eu tenho 20 anos, e minha especialidade é Desenvolvimento Web em React (principal)
                     , adaptável para Angular, Next e Vue.
                 </p>
-                <h3 className={allTheme.primary}>Metas para o futuro: </h3>
+                <h3 style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}>Metas para o futuro: </h3>
                 <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
                     estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
