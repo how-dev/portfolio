@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./index.css";
 import profilePhoto from "./profile.jpg";
 import instagramQR from "./how.dev_nametag.png";
@@ -229,7 +229,7 @@ export const Datas: React.FC = () => {
                 <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Desde criança eu sempre fui apaixonado por programação e tecnologia.
                     Meu pai trabalha com computação e sempre me ensinou lógica de programação desde pequeno.
-                    Aos 7 anos eu já programava jogos em RPG Maker VX/XP. Na minha adolescência, trabalhei
+                    Aos 10 anos eu já programava jogos em RPG Maker VX/XP. Na minha adolescência, trabalhei
                     com amigos em jogos online inspirados em Habbo Hotel, que usávamos Flash, da Adobe, e C#.
                     Na vida adulta, ao entrar na faculdade de Engenharias, tive contato com Python, e logo com
                     JavaScript. Hoje eu tenho 20 anos, e minha especialidade é Desenvolvimento Web em React (principal)
@@ -250,7 +250,7 @@ export const Datas: React.FC = () => {
                 {hardSkills.map((skill:{name: string, skill: number}, index: number) => (
                     <div key={index}>
                         <div className={allTheme.mySkills} key={index}>
-                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
+                            {skill.name}:<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
                         </div><br/>
                     </div>
                 ))}
@@ -262,7 +262,7 @@ export const Datas: React.FC = () => {
                 {softSkills.map((skill:{name: string, skill: number}, index: number) => (
                     <div key={index}>
                         <div className={allTheme.mySkills} >
-                            {skill.name}:&nbsp;&nbsp;<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
+                            {skill.name}:<CircularProgressWithLabel variant="determinate" value={skill.skill} style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}}/>
                         </div><br />
                     </div>
                 ))}

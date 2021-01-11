@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Switch from '@material-ui/core/Switch';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -16,14 +15,10 @@ import FaceIcon from '@material-ui/icons/Face';
 import NaturePeopleIcon from '@material-ui/icons/NaturePeople';
 import WorkIcon from '@material-ui/icons/Work';
 import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
-import Brightness5Icon from '@material-ui/icons/Brightness5';
-import NightsStayIcon from '@material-ui/icons/NightsStay';
 
 import { Link, Element } from 'react-scroll';
-import {useDispatch, useSelector} from "react-redux";
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-import { changeTheme } from "../../store/modules/themeColor/action";
+import { useSelector} from "react-redux";
+import CustomizedSwitches from "./switch"
 
 const useStyles = makeStyles({
     list: {
@@ -38,9 +33,6 @@ type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 export const Title: React.FC = () => {
     let darkTheme = useSelector((state: {color: boolean}) => state.color);
-    const [pageTheme, setPageTheme] = React.useState("escuro")
-
-    const dispatch = useDispatch();
     const classes = useStyles();
     const [state, setState] = React.useState({
         top: false,
@@ -75,38 +67,8 @@ export const Title: React.FC = () => {
 
         setState({ ...state, [anchor]: open });
     };
-    const sun = <Brightness5Icon />
-    const moon = <NightsStayIcon />
-    const [dark, changeDark] = React.useState({checkedA: true,});
-    const [label, changeLabel] = React.useState({icon: moon, state: "moon"})
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        changeDark({ ...dark, [event.target.name]: event.target.checked });
-        if (label.state === "moon") {
-            changeLabel({icon: sun, state: "sun"})
-        } else {
-            changeLabel({icon: moon, state: "moon"})
-        }
-        dispatch(changeTheme(dark.checkedA))
-        if (!darkTheme) {
-            setPageTheme("claro")
-        } else {
-            setPageTheme("escuro")
-        }
-    };
 
-    const PurpleSwitch = withStyles({
-        switchBase: {
-            color: '#C2B8B2',
-            '&$checked': {
-                color: '#204B57'
-            },
-            '&$checked + $track': {
-                backgroundColor: '#00c1f8',
-            },
-        },
-        checked: {},
-        track: {},
-    })(Switch);
+
 
     const Lista = (anchor: Anchor) => {
         const darkTheme = useSelector((state: {color: boolean}) => state.color);
@@ -176,15 +138,12 @@ export const Title: React.FC = () => {
     }
 
 
-
     return (
         <>
-            <div className={pageTheme}>
+            <div className={!darkTheme ? "escuro" : "claro"}>
+
                 <div style={{display: "flex", justifyContent: "space-between"}}>
-                    <FormControlLabel
-                        style={{marginLeft: 20, color: "#C0E0DE"}} control={<PurpleSwitch checked={dark.checkedA} onChange={handleChange} name="checkedA" />}
-                        label={label.icon}
-                    />
+                    <CustomizedSwitches />
                     <Button onClick={toggleDrawer("right", true)}><DehazeIcon style={{color: "white"}}/></Button>
                 </div>
                 <h1>Desenvolvedor React</h1>

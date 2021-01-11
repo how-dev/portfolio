@@ -32,9 +32,9 @@
     }
 .drawer {
     background: #3C474B !important;
-    transition: .5s;
+    transition: .5s ;
 }
 .drawerClaro {
     background: #8A716A !important;
-    transition: .5s;
+    transition: .5s ;
 }

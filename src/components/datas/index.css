@@ -140,12 +140,16 @@
             align-items: center;
             color: #C0E0DE;
             transition: .3s;
+            width: 200px;
+            justify-content: space-between;
         }
         .mySkillsClaro {
             display: flex;
             align-items: center;
             color: #C2B8B2;
             transition: .3s;
+            width: 200px;
+            justify-content: space-between;
         }
 .inferior {
     background: #3C474B !important;
