@@ -14,6 +14,7 @@
     }
     .profilePhoto {
         width: 200px;
+        height: 200px;
         border-radius: 50%;
         border: 2px solid #C0E0DE;
         padding: 5px;
@@ -22,6 +23,7 @@
     }
     .profilePhotoClaro {
         width: 200px;
+        height: 200px;
         border-radius: 50%;
         border: 2px solid #8A716A;
         padding: 5px;
