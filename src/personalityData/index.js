@@ -1,4 +1,3 @@
-"use strict";
 exports.__esModule = true;
 exports.softSkills = exports.hardSkills = void 0;
 exports.hardSkills = [

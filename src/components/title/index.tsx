@@ -3,22 +3,15 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import "./index.css"
-import ContactsIcon from '@material-ui/icons/Contacts';
-import PersonIcon from '@material-ui/icons/Person';
-import FaceIcon from '@material-ui/icons/Face';
-import NaturePeopleIcon from '@material-ui/icons/NaturePeople';
-import WorkIcon from '@material-ui/icons/Work';
-import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
 
-import { Link, Element } from 'react-scroll';
+import { Element } from 'react-scroll';
 import { useSelector} from "react-redux";
 import CustomizedSwitches from "./switch"
+
+import { theItems } from "./myItens/theItens";
+import MyItens from "./myItens";
 
 const useStyles = makeStyles({
     list: {
@@ -83,56 +76,7 @@ export const Title: React.FC = () => {
             >
 
                 <h1 style={!darkTheme ? {textAlign: "center", color: "#C0E0DE"} : {textAlign: "center", color: "#C2B8B2"}}>Sumário:</h1>
-                <Link activeClass="active" to="contacts" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-                            <ListItemIcon><ContactsIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-                            <ListItemText primary="Contatos" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
-                <Link activeClass="active" to="aboutMe" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-
-                            <ListItemIcon><FaceIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-
-                            <ListItemText primary="Quem sou eu" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
-                <Link activeClass="active" to="hardskills" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-                            <ListItemIcon><PersonIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-                            <ListItemText primary="HardSkills" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
-                <Link activeClass="active" to="softskills" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-                            <ListItemIcon><NaturePeopleIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-                            <ListItemText primary="SoftSkills" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
-                <Link activeClass="active" to="works" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-                            <ListItemIcon><WorkIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-                            <ListItemText primary="Trabalhos" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
-                <Link activeClass="active" to="top" spy={true} smooth={true} duration={500}>
-                    <List>
-                        <ListItem button onClick={toggleDrawer(anchor, false)}>
-                            <ListItemIcon><VerticalAlignTopIcon style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/></ListItemIcon>
-                            <ListItemText primary="Ir ao topo" style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}/>
-                        </ListItem>
-                    </List>
-                </Link>
+                {theItems.map((elt, index) => <MyItens key={index} darkTheme={darkTheme} anchor={anchor} MyIcon={elt.MyIcon} myPrimary={elt.myPrimary} myTo={elt.myTo} toggleDrawer={toggleDrawer}/>)}
             </div>
         )
     }

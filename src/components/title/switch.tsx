@@ -9,7 +9,7 @@ import {changeTheme} from "../../store/modules/themeColor/action";
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 
-const PurpleSwitch = withStyles({
+const TheSwitch = withStyles({
     switchBase: {
         color: '#C2B8B2',
         '&$checked': {
@@ -48,7 +48,7 @@ export default function CustomizedSwitches() {
         <FormGroup>
             <FormControlLabel
                 style={!darkTheme ? {marginLeft: 20, color: "#C0E0DE"} : {marginLeft: 20, color: "#C2B8B2"}}
-                control={<PurpleSwitch checked={dark.checkedA} onChange={handleChange} name="checkedA" />}
+                control={<TheSwitch checked={dark.checkedA} onChange={handleChange} name="checkedA" />}
                 label={label.icon}
             />
         </FormGroup>

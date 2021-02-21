@@ -5,7 +5,7 @@ import pythonLambda from "../../../worksImages/pythonLambda.png";
 import hinodeReact from "../../../worksImages/hinodeReact.png";
 import dqf from "../../../worksImages/dqf.png";
 
-const tutorialSteps = [
+const myWorks: {label: string, imgPath: any}[] = [
     {
         label: 'KenzieHub - React + Redux',
         imgPath: KenzieHub,
@@ -32,4 +32,4 @@ const tutorialSteps = [
     },
 ];
 
-export default tutorialSteps
+export default myWorks
