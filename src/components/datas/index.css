@@ -6,9 +6,20 @@
     margin: 50px 0;
     flex-wrap: wrap;
 }
+.myFutureIcons {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
     .theIcon {
         width: 40px;
         opacity: 0;
+    }
+    .theFutureIcon {
+        width: 40px;
     }
     .theIcon:nth-child(5), .theIcon:nth-child(6){
         width: 40px;
