@@ -4,7 +4,7 @@ Hi! I am a developer specializing in React and Typescript!
 
 ## `About me:`
 
-Programming has always been part of my life. Since I was 7 years old I already programmed games in RPG Maker. In my teens, I worked for a gaming company inspired by Habbo Hotel. In my adult life, I had contact with Python in engineering college and today I am a web developer specializing in React. I am developing in Python, DJANGO, GraphQL, MySQL, Flask and NodeJS.
+Programming has always been part of my life. Since I was 10 years old I already programmed games in RPG Maker. In my teens, I worked for a gaming company inspired by Habbo Hotel. In my adult life, I had contact with Python in engineering college and today I am a web developer specializing in React. I am developing in Python, DJANGO, GraphQL, MySQL, Flask and NodeJS.
 
 ## `My technologies:`
 

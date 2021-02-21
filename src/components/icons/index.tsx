@@ -55,3 +55,5 @@ export const FutureIcons: React.FC = () => {
         </div>
     )
 }
+
+export const MyFunction: () => string = () => "oi"
