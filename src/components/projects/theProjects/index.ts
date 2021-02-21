@@ -3,6 +3,7 @@ import Pokedex from "../../../worksImages/pokedex.png";
 import Conan from "../../../worksImages/conan.png";
 import pythonLambda from "../../../worksImages/pythonLambda.png";
 import hinodeReact from "../../../worksImages/hinodeReact.png";
+import dqf from "../../../worksImages/dqf.png";
 
 const tutorialSteps = [
     {
@@ -24,6 +25,10 @@ const tutorialSteps = [
     {
         label: 'Site de produtos de beleza - React + Redux',
         imgPath: hinodeReact,
+    },
+    {
+        label: 'Delivery - React + Redux + Axios + JSON-Server',
+        imgPath: dqf,
     },
 ];
 
