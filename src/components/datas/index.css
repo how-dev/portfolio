@@ -8,15 +8,42 @@
 }
     .theIcon {
         width: 40px;
+        opacity: 0;
     }
-@keyframes theIcon {
-    from {
-        transform: rotate(0deg);
+    .theIcon:nth-child(5), .theIcon:nth-child(6){
+        width: 40px;
+        animation: my-tech 4s infinite linear;
     }
-    to {
-        transform: rotate(360deg);
+    .myIcons .theIcon:nth-child(1) {
+        animation: fadeIn 2s normal 200ms forwards;
     }
-}
+    .myIcons .theIcon:nth-child(2) {
+        animation: fadeIn 2s normal 600ms forwards;
+    }
+    .myIcons .theIcon:nth-child(3) {
+        animation: fadeIn 2s normal 1000ms forwards;
+    }
+    .myIcons .theIcon:nth-child(4) {
+        animation: fadeIn 2s normal 1400ms forwards;
+    }
+    .myIcons .theIcon:nth-child(5) {
+        animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
+    }
+    .myIcons .theIcon:nth-child(6) {
+        animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite linear;
+    }
+    .myIcons .theIcon:nth-child(7) {
+        animation: fadeIn 2s normal 2600ms forwards;
+    }
+        @keyframes my-tech {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
 .dataBox {
     padding: 50px 10px 50px 10px;
     display: flex;
@@ -39,7 +66,17 @@
         padding: 5px;
         box-shadow: 0 0 6px #C0E0DE;
         transition: .5s;
+        animation-delay: 200ms;
+        animation: fadeIn 3s normal;
     }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     .profilePhotoClaro {
         width: 200px;
         height: 200px;
