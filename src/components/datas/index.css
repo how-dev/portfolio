@@ -97,8 +97,6 @@
         padding: 5px;
         box-shadow: 0 0 6px #C0E0DE;
         transition: .5s;
-        animation-delay: 200ms;
-        animation: fadeIn 3s normal;
     }
 
     .profilePhotoClaro {
