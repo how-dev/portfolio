@@ -67,12 +67,12 @@ export const Datas: React.FC = () => {
                 <span className={allTheme.primary}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
             </Element>
             <Icons />
-            <span className={allTheme.primary}>Esse currículo foi feito com TypeScript, React e Redux.</span>
+            <span className={allTheme.primary}>Este currículo foi feito com TypeScript, React e Redux.</span>
             <div className={allTheme.geralBox}>
                 <h1 className={allTheme.boxTitle}>Contatos:</h1>
                 {myLinks.map((elt, index) => <PersonalLinks key={index} allTheme={allTheme} myLink={elt.myLink} Icon={elt.Icon} content={elt.content}/>)}
                 <span className={allTheme.email} ><EmailIcon/>Email: howard@kenzie.com.br</span>
-                <img alt="instagramQR" src={instagramQR} className="instagramQR" />
+                <a href="https://www.instagram.com/how.dev/" rel="noreferrer" target="_blank" style={{alignSelf: "center"}}><img alt="instagramQR" src={instagramQR} className="instagramQR" /></a>
                 <Element name="aboutMe">
                 </Element>
             </div>
