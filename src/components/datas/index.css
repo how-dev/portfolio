@@ -1,3 +1,31 @@
+@keyframes my-tech {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .myIcons {
     display: flex;
     width: 100%;
@@ -22,20 +50,20 @@
         width: 40px;
     }
     .theIcon:nth-child(5), .theIcon:nth-child(6){
-        width: 40px;
+        width:40px;
         animation: my-tech 4s infinite linear;
     }
     .myIcons .theIcon:nth-child(1) {
-        animation: fadeIn 2s normal 200ms forwards;
+        animation: fadeIn 2s normal 200ms forwards, jump 2s infinite alternate;
     }
     .myIcons .theIcon:nth-child(2) {
-        animation: fadeIn 2s normal 600ms forwards;
+        animation: fadeIn 2s normal 600ms forwards, jump 2s infinite alternate 200ms;
     }
     .myIcons .theIcon:nth-child(3) {
-        animation: fadeIn 2s normal 1000ms forwards;
+        animation: fadeIn 2s normal 1000ms forwards, jump 2s infinite alternate 400ms;
     }
     .myIcons .theIcon:nth-child(4) {
-        animation: fadeIn 2s normal 1400ms forwards;
+        animation: fadeIn 2s normal 1400ms forwards, jump 2s infinite alternate 600ms;
     }
     .myIcons .theIcon:nth-child(5) {
         animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
@@ -44,16 +72,8 @@
         animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite linear;
     }
     .myIcons .theIcon:nth-child(7) {
-        animation: fadeIn 2s normal 2600ms forwards;
+        animation: fadeIn 2s normal 2600ms forwards, jump 2s infinite alternate 1200ms;
     }
-        @keyframes my-tech {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg)
-            }
-        }
 
 .dataBox {
     padding: 50px 10px 50px 10px;
@@ -80,14 +100,7 @@
         animation-delay: 200ms;
         animation: fadeIn 3s normal;
     }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+
     .profilePhotoClaro {
         width: 200px;
         height: 200px;
