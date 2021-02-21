@@ -1,3 +1,13 @@
+.myIcons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+    .theIcon {
+        width: 40px;
+    }
 .dataBox {
     padding: 50px 10px 50px 10px;
     display: flex;

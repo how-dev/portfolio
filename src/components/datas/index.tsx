@@ -10,6 +10,7 @@ import Skills from "../skills";
 import profilePhoto from "./profile.jpg";
 import instagramQR from "./how.dev_nametag.png";
 import { hardAndSoft } from "../skills/hardAndSoft";
+import { Icons, FutureIcons } from "../icons";
 import "./index.css";
 
 export const Datas: React.FC = () => {
@@ -65,6 +66,8 @@ export const Datas: React.FC = () => {
             <Element name="contacts">
                 <span className={allTheme.primary}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
             </Element>
+            <Icons />
+            <span className={allTheme.primary}>Esse currículo foi feito com TypeScript, React e Redux.</span>
             <div className={allTheme.geralBox}>
                 <h1 className={allTheme.boxTitle}>Contatos:</h1>
                 {myLinks.map((elt, index) => <PersonalLinks key={index} allTheme={allTheme} myLink={elt.myLink} Icon={elt.Icon} content={elt.content}/>)}
@@ -87,10 +90,11 @@ export const Datas: React.FC = () => {
                 <h3 style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}>Metas para o futuro: </h3>
                 <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
-                    estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e API REST.
+                    estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e Ruby.
                 </p>
                 <Element name="hardskills">
                 </Element>
+                <FutureIcons />
             </div>
             {hardAndSoft.map((elt, index) => <Skills key={index} allTheme={allTheme} darkTheme={darkTheme} Title={elt.Title} mySkills={elt.mySkills} workName={elt.workName}/>)}
             <h1 className={allTheme.primary}>Trabalhos: </h1>
