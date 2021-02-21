@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {useSelector} from "react-redux";
-import EmailIcon from "@material-ui/icons/Email"
 import { Element } from 'react-scroll';
 
 import PersonalLinks from "../personalLinks";
 import { myLinks } from "../personalLinks/myLinks";
 import Works from "../projects";
 import Skills from "../skills";
-import profilePhoto from "./profile.jpg";
-import instagramQR from "./how.dev_nametag.png";
+import profilePhoto from "../../worksImages/profile.jpg";
+import instagramQR from "../../worksImages/how.dev_nametag.png";
 import { hardAndSoft } from "../skills/hardAndSoft";
 import { Icons, FutureIcons } from "../icons";
 import "./index.css";
@@ -68,14 +67,15 @@ export const Datas: React.FC = () => {
             </Element>
             <Icons />
             <span className={allTheme.primary}>Este currículo foi feito com TypeScript, React e Redux.</span>
+
             <div className={allTheme.geralBox}>
                 <h1 className={allTheme.boxTitle}>Contatos:</h1>
                 {myLinks.map((elt, index) => <PersonalLinks key={index} allTheme={allTheme} myLink={elt.myLink} Icon={elt.Icon} content={elt.content}/>)}
-                <span className={allTheme.email} ><EmailIcon/>Email: howard@kenzie.com.br</span>
                 <a href="https://www.instagram.com/how.dev/" rel="noreferrer" target="_blank" style={{alignSelf: "center"}}><img alt="instagramQR" src={instagramQR} className="instagramQR" /></a>
                 <Element name="aboutMe">
                 </Element>
             </div>
+
             <div className={allTheme.geralBox}>
                 <h1 className={allTheme.boxTitle}>Quem sou eu:</h1>
                 <p className={allTheme.bodyAboutMe}>
@@ -88,12 +88,12 @@ export const Datas: React.FC = () => {
                     , adaptável para Angular, Next e Vue.
                 </p>
                 <h3 style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}>Metas para o futuro: </h3>
+                <Element name="hardskills">
+                </Element>
                 <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
                     estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e Ruby.
                 </p>
-                <Element name="hardskills">
-                </Element>
                 <FutureIcons />
             </div>
             {hardAndSoft.map((elt, index) => <Skills key={index} allTheme={allTheme} darkTheme={darkTheme} Title={elt.Title} mySkills={elt.mySkills} workName={elt.workName}/>)}

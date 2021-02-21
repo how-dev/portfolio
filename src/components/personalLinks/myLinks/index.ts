@@ -3,7 +3,8 @@ import {
     Instagram as InstagramIcon,
     Facebook as FacebookIcon,
     WhatsApp as WhatsAppIcon,
-    GitHub as GitHubIcon
+    GitHub as GitHubIcon,
+    Email as EmailIcon
 } from "@material-ui/icons/"
 
 interface myDatas {
@@ -18,5 +19,6 @@ export const myLinks: myDatas[] = [
     {myLink: "https://www.facebook.com/howard.ricardo.9", Icon: FacebookIcon, content: "Facebook: Howard"},
     {myLink: "https://api.whatsapp.com/send?phone=5561983089950&text=Ol%C3%A1!%20Eu%20gostaria%20de%20falar%20sobre%20trabalho.", Icon: WhatsAppIcon, content: "WhatsApp: (61) 98308-9950"},
     {myLink: "https://github.com/how-dev", Icon: GitHubIcon, content: "Github: how-dev"},
+    {myLink: "mailto:howard.medeiros@gmail.com", Icon: EmailIcon, content: "Email: howard@kenzie.com.br"}
 ]
 
