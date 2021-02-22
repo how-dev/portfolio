@@ -17,7 +17,6 @@ export const Datas: React.FC = () => {
     const [allTheme, setAllTheme] = useState({
         primary: "HowardTitleEscuro",
         secondary: "link",
-        email: "linkEmail",
         profilePhoto: "profilePhoto",
         boxTitle: "boxTitle",
         bodyAboutMe: "bodyAboutMe",
@@ -32,7 +31,6 @@ export const Datas: React.FC = () => {
             setAllTheme({
                 primary: "HowardTitleClaro",
                 secondary: "linkClaro",
-                email: "linkEmailClaro",
                 profilePhoto: "profilePhotoClaro",
                 boxTitle: "boxTitleClaro",
                 bodyAboutMe: "bodyAboutMeClaro",
@@ -45,7 +43,6 @@ export const Datas: React.FC = () => {
             setAllTheme({
                 primary: "HowardTitleEscuro",
                 secondary: "link",
-                email: "linkEmail",
                 profilePhoto: "profilePhoto",
                 boxTitle: "boxTitle",
                 bodyAboutMe: "bodyAboutMe",

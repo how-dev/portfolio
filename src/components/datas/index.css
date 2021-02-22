@@ -140,6 +140,7 @@
         align-items: flex-start;
         border-radius: 10px;
         transition: .5s;
+        overflow: hidden;
     }
     .geralBoxClaro {
         max-width: 374px;
@@ -152,6 +153,7 @@
         align-items: flex-start;
         border-radius: 10px;
         transition: .5s;
+        overflow: hidden;
     }
 
 
@@ -174,6 +176,8 @@
         display: flex;
         align-items: center;
         margin: 10px;
+        white-space: nowrap;
+        font-size: 1em;
     }
         .link:nth-child(2) {
             animation: flash 2s infinite alternate-reverse;
@@ -191,6 +195,7 @@
             animation: flash 2s infinite alternate-reverse 2000ms;
         }
         .link:nth-child(7) {
+            font-size: .9em;
             animation: flash 2s infinite alternate-reverse 2500ms;
         }
         .link:hover {
@@ -206,6 +211,7 @@
         display: flex;
         align-items: center;
         margin: 10px;
+        white-space: nowrap;
     }
         .linkClaro:nth-child(2) {
             animation: flash 2s infinite alternate-reverse;
@@ -223,26 +229,13 @@
             animation: flash 2s infinite alternate-reverse 2000ms;
         }
         .linkClaro:nth-child(7) {
+            font-size: .9em;
             animation: flash 2s infinite alternate-reverse 2500ms;
         }
 
         .linkClaro:hover {
             color: lightskyblue;
             border-bottom: 1px solid lightskyblue;
-        }
-        .linkEmail {
-            color: #C0E0DE;
-            display: flex;
-            align-items: center;
-            margin: 10px;
-            transition: .3s;
-        }
-        .linkEmailClaro {
-            color: #C2B8B2;
-            display: flex;
-            align-items: center;
-            margin: 10px;
-            transition: .3s;
         }
         .instagramQR {
             max-width: 354px;
