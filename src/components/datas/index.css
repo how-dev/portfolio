@@ -26,6 +26,17 @@
     }
 }
 
+@keyframes flash {
+    from {
+        color: lightskyblue;
+        border-bottom: 1px solid lightskyblue;
+    }
+    to {
+        color: #C0E0DE;
+        border-bottom: 1px solid transparent;
+    }
+}
+
 .myIcons {
     display: flex;
     width: 100%;
@@ -49,31 +60,52 @@
     .theFutureIcon {
         width: 40px;
     }
-    .theIcon:nth-child(5), .theIcon:nth-child(6){
-        width:40px;
-        animation: my-tech 4s infinite linear;
-    }
-    .myIcons .theIcon:nth-child(1) {
-        animation: fadeIn 2s normal 200ms forwards, jump 2s infinite alternate;
-    }
-    .myIcons .theIcon:nth-child(2) {
-        animation: fadeIn 2s normal 600ms forwards, jump 2s infinite alternate 200ms;
-    }
-    .myIcons .theIcon:nth-child(3) {
-        animation: fadeIn 2s normal 1000ms forwards, jump 2s infinite alternate 400ms;
-    }
-    .myIcons .theIcon:nth-child(4) {
-        animation: fadeIn 2s normal 1400ms forwards, jump 2s infinite alternate 600ms;
-    }
-    .myIcons .theIcon:nth-child(5) {
-        animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
-    }
-    .myIcons .theIcon:nth-child(6) {
-        animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite linear;
-    }
-    .myIcons .theIcon:nth-child(7) {
-        animation: fadeIn 2s normal 2600ms forwards, jump 2s infinite alternate 1200ms;
-    }
+        .theFutureIcon:nth-child(1) {
+            animation: jump 2s infinite alternate;
+        }
+        .theFutureIcon:nth-child(2) {
+            animation: jump 2s infinite alternate 200ms;
+        }
+        .theFutureIcon:nth-child(3) {
+            animation: jump 2s infinite alternate 400ms;
+        }
+        .theFutureIcon:nth-child(4) {
+            animation: jump 2s infinite alternate 600ms;
+        }
+        .theFutureIcon:nth-child(5) {
+            animation: jump 2s infinite alternate 800ms;
+        }
+        .theFutureIcon:nth-child(6) {
+            animation: jump 2s infinite alternate 1000ms;
+        }
+        .theFutureIcon:nth-child(7) {
+            animation: jump 2s infinite alternate 1200ms;
+        }
+        .theIcon:nth-child(5), .theIcon:nth-child(6){
+            width:40px;
+            animation: my-tech 4s infinite linear;
+        }
+        .theIcon:nth-child(1) {
+            animation: fadeIn 2s normal 200ms forwards, jump 2s infinite alternate;
+        }
+        .theIcon:nth-child(2) {
+            animation: fadeIn 2s normal 600ms forwards, jump 2s infinite alternate 200ms;
+        }
+        .theIcon:nth-child(3) {
+            animation: fadeIn 2s normal 1000ms forwards, jump 2s infinite alternate 400ms;
+        }
+        .theIcon:nth-child(4) {
+            animation: fadeIn 2s normal 1400ms forwards, jump 2s infinite alternate 600ms;
+        }
+        .theIcon:nth-child(5) {
+            animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
+        }
+        .theIcon:nth-child(6) {
+            animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite linear;
+        }
+        .theIcon:nth-child(7) {
+            animation: fadeIn 2s normal 2600ms forwards, jump 2s infinite alternate 1200ms;
+        }
 
 .dataBox {
     padding: 50px 10px 50px 10px;
@@ -154,6 +186,24 @@
         align-items: center;
         margin: 10px;
     }
+        .link:nth-child(2) {
+            animation: flash 2s infinite alternate-reverse;
+        }
+        .link:nth-child(3) {
+            animation: flash 2s infinite alternate-reverse 500ms;
+        }
+        .link:nth-child(4) {
+            animation: flash 2s infinite alternate-reverse 1000ms;
+        }
+        .link:nth-child(5) {
+            animation: flash 2s infinite alternate-reverse 1500ms;
+        }
+        .link:nth-child(6) {
+            animation: flash 2s infinite alternate-reverse 2000ms;
+        }
+        .link:nth-child(7) {
+            animation: flash 2s infinite alternate-reverse 2500ms;
+        }
         .link:hover {
             color: lightskyblue;
             border-bottom: 1px solid lightskyblue;
@@ -168,6 +218,24 @@
         align-items: center;
         margin: 10px;
     }
+        .linkClaro:nth-child(2) {
+            animation: flash 2s infinite alternate-reverse;
+        }
+        .linkClaro:nth-child(3) {
+            animation: flash 2s infinite alternate-reverse 500ms;
+        }
+        .linkClaro:nth-child(4) {
+            animation: flash 2s infinite alternate-reverse 1000ms;
+        }
+        .linkClaro:nth-child(5) {
+            animation: flash 2s infinite alternate-reverse 1500ms;
+        }
+        .linkClaro:nth-child(6) {
+            animation: flash 2s infinite alternate-reverse 2000ms;
+        }
+        .linkClaro:nth-child(7) {
+            animation: flash 2s infinite alternate-reverse 2500ms;
+        }
 
         .linkClaro:hover {
             color: lightskyblue;
@@ -192,6 +260,7 @@
             width: 90%;
             align-self: center;
             margin-top: 20px;
+            animation: jump 3s infinite alternate;
         }
         .LI-profile-badge {
             align-self: center;

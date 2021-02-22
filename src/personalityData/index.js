@@ -1,3 +1,4 @@
+"use strict";
 exports.__esModule = true;
 exports.softSkills = exports.hardSkills = void 0;
 exports.hardSkills = [
@@ -28,6 +29,6 @@ exports.softSkills = [
     { name: "Bom Humor", skill: 100 },
     { name: "Organização", skill: 100 },
     { name: "Maturidade", skill: 100 },
-    { name: "Resiliência", skill: 95 },
+    { name: "Resiliência", skill: 100 },
     { name: "Paciência", skill: 100 },
 ];
