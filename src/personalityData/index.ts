@@ -5,22 +5,22 @@ interface Skills {
 
 export const hardSkills: Skills[] = [
     {name: "HTML5", skill: 100},
-    {name: "CSS3", skill: 90},
-    {name: "JavaScript (ES6+)", skill: 90},
-    {name: "TypeScript", skill: 85},
+    {name: "CSS3", skill: 100},
+    {name: "JavaScript (ES6+)", skill: 98.33},
+    {name: "TypeScript", skill: 90},
     {name: "React", skill: 100},
     {name: "Redux-Thunk", skill: 95},
-    {name: "Git", skill: 80},
+    {name: "Git", skill: 90},
     {name: "Responsive", skill: 95},
-    {name: "Atomic Design", skill: 80},
-    {name: "Scrum", skill: 75},
+    {name: "Atomic Design", skill: 95},
+    {name: "Scrum", skill: 86.7},
     {name: "Linux", skill: 85},
     {name: "Trello", skill: 80},
-    {name: "Notion", skill: 75},
+    {name: "Notion", skill: 95},
     {name: "Slack", skill: 100},
     {name: "Angular", skill: 50},
     {name: "NextJS", skill: 50},
-    {name: "VueJS", skill: 65},
+    {name: "VueJS", skill: 75},
 ]
 
 export const softSkills: Skills[]  = [
