@@ -26,17 +26,6 @@
     }
 }
 
-@keyframes flash {
-    from {
-        color: lightskyblue;
-        border-bottom: 1px solid lightskyblue;
-    }
-    to {
-        color: #C0E0DE;
-        border-bottom: 1px solid transparent;
-    }
-}
-
 .myIcons {
     display: flex;
     width: 100%;
@@ -101,7 +90,7 @@
             animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
         }
         .theIcon:nth-child(6) {
-            animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite linear;
+            animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite alternate;
         }
         .theIcon:nth-child(7) {
             animation: fadeIn 2s normal 2600ms forwards, jump 2s infinite alternate 1200ms;
@@ -333,4 +322,17 @@
     border-top-right-radius: 10px !important;
     color: #C2B8B2 !important;
     justify-content: center !important;
+}
+
+@media (max-width: 1080px) {
+    @keyframes flash {
+        from {
+            color: lightskyblue;
+            border-bottom: 1px solid lightskyblue;
+        }
+        to {
+            color: #C0E0DE;
+            border-bottom: 1px solid transparent;
+        }
+    }
 }
