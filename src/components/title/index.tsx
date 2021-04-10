@@ -90,7 +90,7 @@ export const Title: React.FC = () => {
                     <CustomizedSwitches />
                     <Button onClick={toggleDrawer("right", true)}><DehazeIcon style={{color: "white"}}/></Button>
                 </div>
-                <h1>Desenvolvedor React</h1>
+                <h1>Desenvolvedor Full-stack</h1>
                 <Drawer classes={!darkTheme ? { paper: "drawer" } : {paper: "drawerClaro"}} anchor="right" open={state["right"]} onClose={toggleDrawer("right", false)}>
                     {Lista("right")}
                 </Drawer>

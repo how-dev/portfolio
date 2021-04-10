@@ -21,12 +21,14 @@
     .escuro h1 {
         text-align: center;
         margin: 0;
+        font-size: 1.6rem;
         color: #C0E0DE;
         transition: .3s;
     }
     .claro h1 {
         text-align: center;
         margin: 0;
+        font-size: 1.6rem;
         color: #C2B8B2;
         transition: .3s;
     }

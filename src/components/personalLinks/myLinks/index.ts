@@ -21,4 +21,3 @@ export const myLinks: myDatas[] = [
     {myLink: "https://github.com/how-dev", Icon: GitHubIcon, content: "Github: how-dev"},
     {myLink: "mailto:howard.medeiros@gmail.com", Icon: EmailIcon, content: "Email: howard.medeiros@gmail.com"}
 ]
-

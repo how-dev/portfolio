@@ -53,14 +53,15 @@ export const Datas: React.FC = () => {
             })
         }
     }, [darkTheme])
-
+    const dateOfBirth = 2000
+    const atualYear = new Date().getFullYear()
 
     return (
         <div className="dataBox">
             <img alt="profile" src={profilePhoto} className={allTheme.profilePhoto} />
             <h1 className={allTheme.primary}>Howard Ricardo</h1>
             <Element name="contacts">
-                <span className={allTheme.primary}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Git, Scrum</span>
+                <span className={allTheme.primary}>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux-Thunk, Python, Flask, SQL (Postgresql, MySQL), SQLAlchemy, Criptografia, POO, APIRESTFUL, Git, Scrum.</span>
             </Element>
             <Icons />
             <span className={allTheme.primary}>Este currículo foi feito com TypeScript, React e Redux.</span>
@@ -81,15 +82,17 @@ export const Datas: React.FC = () => {
                     Aos 10 anos eu já programava jogos em RPG Maker VX/XP. Na minha adolescência, trabalhei
                     com amigos em jogos online inspirados em Habbo Hotel, que usávamos Flash, da Adobe, e C#.
                     Na vida adulta, ao entrar na faculdade de Engenharias, tive contato com Python, e logo com
-                    JavaScript. Hoje eu tenho 20 anos, e minha especialidade é Desenvolvimento Web em React (principal)
-                    , adaptável para Angular, Next e Vue.
+                    JavaScript. Tenho {atualYear - dateOfBirth} anos, super entusiasmado e muita vontade de aprender.
+                    Apaixonado por projetos e trabalhos que envolvem liderança e um senso de empreendedorismo
+                    muito forte. Sempre busco inovar e melhorar. Excelente comunicação e pensamento crítico.
+                    Estudar & codar é o que eu mais amo fazer na minha vida.
                 </p>
                 <h3 style={!darkTheme ? {color: "#C0E0DE"} : {color: "#C2B8B2"}}>Metas para o futuro: </h3>
                 <Element name="hardskills">
                 </Element>
                 <p className={allTheme.bodyAboutMe}>
-                    &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Front-End, mas eu estou em busca de me tornar um Full-Stack,
-                    estudando Java, Python, DJANGO, Flask, MySQL, PHP, GraphQL e Ruby.
+                    &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Full-stack, mas estou em busca de
+                    melhorar minhas stacks em Back-End. Estudando DJANGO, Ruby, Java e GraphQL.
                 </p>
                 <FutureIcons />
             </div>

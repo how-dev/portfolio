@@ -1,4 +1,3 @@
-"use strict";
 exports.__esModule = true;
 var kenziehub_png_1 = require("../../../worksImages/kenziehub.png");
 var pokedex_png_1 = require("../../../worksImages/pokedex.png");
