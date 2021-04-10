@@ -92,7 +92,7 @@ export const Datas: React.FC = () => {
                 </Element>
                 <p className={allTheme.bodyAboutMe}>
                     &nbsp;&nbsp; Hoje eu sou um Desenvolvedor Full-stack, mas estou em busca de
-                    melhorar minhas stacks em Back-End. Estudando DJANGO, Ruby, Java e GraphQL.
+                    melhorar minhas stacks em Back-End. Estudando DJANGO, Ruby, Java, PHP e GraphQL.
                 </p>
                 <FutureIcons />
             </div>
