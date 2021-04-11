@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "How Dev - Desenvolvedor FullStack",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#630e52",
+  "background_color": "#630e52"
 }
