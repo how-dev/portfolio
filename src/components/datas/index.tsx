@@ -38,7 +38,10 @@ export const Datas: React.FC = () => {
                 "      }\n" +
                 "      ::-webkit-scrollbar-thumb {\n" +
                 "        background: #695b52;\n" +
-                "      }"
+                "      }";
+            const topWindow: any = document.getElementById("topColor")
+            topWindow.content = "#8a716a"
+
             setAllTheme({
                 primary: "HowardTitleClaro",
                 secondary: "linkClaro",
@@ -60,7 +63,9 @@ export const Datas: React.FC = () => {
                 "      }\n" +
                 "      ::-webkit-scrollbar-thumb {\n" +
                 "        background: #0c1916;\n" +
-                "      }"
+                "      }";
+            const topWindow: any = document.getElementById("topColor")
+            topWindow.content = "#3c474b"
             setAllTheme({
                 primary: "HowardTitleEscuro",
                 secondary: "link",
