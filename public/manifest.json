@@ -1,6 +1,6 @@
 {
   "short_name": "How Dev - Desenvolvedor FullStack",
-  "name": "Create React App Sample",
+  "name": "Aguarde um segundo...",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#630e52",
-  "background_color": "#630e52"
+  "theme_color": "#162521",
+  "background_color": "#162521"
 }
