@@ -96,7 +96,7 @@ export const Datas: React.FC = () => {
                 </p>
                 <FutureIcons />
             </div>
-            {hardAndSoft.map((elt, index) => <Skills key={index} allTheme={allTheme} darkTheme={darkTheme} Title={elt.Title} mySkills={elt.mySkills} workName={elt.workName}/>)}
+            {hardAndSoft.map((elt, index) => <Skills key={index} allTheme={allTheme} darkTheme={darkTheme} Title={elt.Title} workName={elt.workName} content={elt.mySkills}/>)}
             <h1 className={allTheme.primary}>Trabalhos: </h1>
             <Works darkTheme={darkTheme} allTheme={allTheme} />
         </div>
