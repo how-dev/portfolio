@@ -27,7 +27,18 @@ export const Datas: React.FC = () => {
     })
 
     useEffect(() => {
+
         if (darkTheme) {
+            const styleScroll: any = document.getElementById("scroll")
+            styleScroll.innerHTML = "::-webkit-scrollbar-track {\n" +
+                "        background-color: #9c8e85;\n" +
+                "      }\n" +
+                "      ::-webkit-scrollbar {\n" +
+                "        width: 8px;\n" +
+                "      }\n" +
+                "      ::-webkit-scrollbar-thumb {\n" +
+                "        background: #695b52;\n" +
+                "      }"
             setAllTheme({
                 primary: "HowardTitleClaro",
                 secondary: "linkClaro",
@@ -40,6 +51,16 @@ export const Datas: React.FC = () => {
                 inferiorTitle: "inferiorTitleClaro"
             })
         } else {
+            const styleScroll: any = document.getElementById("scroll")
+            styleScroll.innerHTML = "::-webkit-scrollbar-track {\n" +
+                "        background-color: #2c403b;\n" +
+                "      }\n" +
+                "      ::-webkit-scrollbar {\n" +
+                "        width: 8px;\n" +
+                "      }\n" +
+                "      ::-webkit-scrollbar-thumb {\n" +
+                "        background: #0c1916;\n" +
+                "      }"
             setAllTheme({
                 primary: "HowardTitleEscuro",
                 secondary: "link",
