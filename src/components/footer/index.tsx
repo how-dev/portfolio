@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
     const darkTheme = useSelector((state: {color: boolean}) => state.color);
     return (
         <div className={!darkTheme ? "footer" : "footerClaro"} >
-            <div style={{ display: "flex", flexDirection: "column", height: "100%", justifyContent: "space-around"}}>
+            <div className="footerIn">
                 <Link className={!darkTheme ? "item" : "itemClaro"} activeClass="active" to="top" spy={true} smooth={true} duration={500}>
                     <VerticalAlignTopIcon />Ir ao topo
                 </Link>

@@ -9,7 +9,14 @@ interface Props {
 
 const PersonalLinks: React.FC<Props> = ({ allTheme, myLink, Icon, content }) => {
     return (
-        <a className={allTheme.secondary} href={myLink} rel="noreferrer" target="_blank"><Icon/>{content}</a>
+        <a
+            className={allTheme.secondary}
+            href={myLink}
+            rel="noreferrer"
+            target="_blank"
+        >
+            <Icon/> {content}
+        </a>
     );
 };
 

@@ -1,0 +1,157 @@
+@keyframes my-tech {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.myIcons {
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-around;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+.myFutureIcons {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.theFrontIcon, .theBackIcon {
+    width: 40px;
+    opacity: 0;
+    margin: 0 5px;
+}
+
+    .theFutureIcon {
+        width: 40px;
+    }
+    .theFutureIcon {
+        width: 40px;
+    }
+
+    .theFutureIcon:nth-child(1) {
+        animation: jump 2s infinite alternate;
+    }
+    .theFutureIcon:nth-child(2) {
+        animation: jump 2s infinite alternate 200ms;
+    }
+    .theFutureIcon:nth-child(3) {
+        animation: my-tech 5s infinite linear 400ms;
+    }
+    .theFutureIcon:nth-child(4) {
+        animation: jump 2s infinite alternate 600ms;
+    }
+    .theFutureIcon:nth-child(5) {
+        animation: jump 2s infinite alternate 800ms;
+    }
+    .theIcon:nth-child(5), .theIcon:nth-child(6){
+        width:40px;
+        animation: my-tech 4s infinite linear;
+    }
+    .theFrontIcon:nth-child(1) {
+        animation: fadeIn 2s normal 200ms forwards, jump 2s infinite alternate;
+    }
+    .theFrontIcon:nth-child(2) {
+
+        animation: fadeIn 2s normal 600ms forwards, jump 2s infinite alternate 200ms;
+    }
+    .theFrontIcon:nth-child(3) {
+        animation: fadeIn 2s normal 1000ms forwards, jump 2s infinite alternate 400ms;
+    }
+    .theFrontIcon:nth-child(4) {
+        animation: fadeIn 2s normal 1400ms forwards, jump 2s infinite alternate 600ms;
+    }
+    .theFrontIcon:nth-child(5) {
+        animation: fadeIn 2s normal 1800ms forwards, my-tech 2s infinite linear;
+    }
+    .theFrontIcon:nth-child(6) {
+        animation: fadeIn 2s normal 2200ms forwards, my-tech 2s infinite alternate;
+    }
+    .theFrontIcon:nth-child(7) {
+        animation: fadeIn 2s normal 2600ms forwards, jump 2s infinite alternate 1200ms;
+    }
+    .theBackIcon:nth-child(1) {
+        animation: fadeIn 2s normal 3000ms forwards, jump 2s infinite alternate 1400ms;
+    }
+    .theBackIcon:nth-child(2) {
+        background: radial-gradient(white -10%, transparent 75%);
+        animation: fadeIn 2s normal 3400ms forwards, jump 2s infinite alternate 1600ms;
+    }
+    .theBackIcon:nth-child(3) {
+        animation: fadeIn 2s normal 3800ms forwards, jump 2s infinite alternate 1800ms;
+    }
+    .theBackIcon:nth-child(4) {
+        animation: fadeIn 2s normal 4200ms forwards, jump 2s infinite alternate 2000ms;
+    }
+    .theBackIcon:nth-child(5) {
+        animation: fadeIn 2s normal 4600ms forwards, jump 2s infinite alternate 2200ms;
+    }
+
+@media (max-width: 280px) {
+    .FrontEndIcons {
+        height: 175px;
+    }
+    .myIcons {
+        height: 250px;
+    }
+}
+
+@media (max-width: 320px) {
+    .myIcons {
+        width: 77%;
+        height: 200px;
+    }
+    .FrontEndIcons {
+        height: 110px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .BackEndIcons {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1080px) {
+    @keyframes flash {
+        from {
+            color: lightskyblue;
+            border-bottom: 1px solid lightskyblue;
+        }
+        to {
+            color: #C0E0DE;
+            border-bottom: 1px solid transparent;
+        }
+    }
+}

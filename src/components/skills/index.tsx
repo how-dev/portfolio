@@ -1,4 +1,4 @@
-import {Element} from "react-scroll";
+import { Element } from "react-scroll";
 import React from "react";
 
 interface Props {
@@ -13,6 +13,7 @@ const Skills: React.FC<Props> = ({ allTheme, Title, workName , content}) => {
     return (
         <div className={allTheme.geralBox}>
             <h1 className={allTheme.boxTitle}>{Title}</h1>
+
             <p className={allTheme.bodyAboutMe}>&nbsp;&nbsp;{content}</p>
             <Element name={workName}>
             </Element>

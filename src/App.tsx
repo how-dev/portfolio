@@ -5,16 +5,14 @@ import { Footer } from "./components/footer";
 
 import "./App.css";
 
-
-
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Title/>
-      <Datas />
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Title/>
+            <Datas />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
