@@ -41,8 +41,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-    allTheme: any,
-    darkTheme: any,
+    allTheme: {
+        primary: string,
+        secondary: string,
+        profilePhoto: string,
+        boxTitle: string,
+        bodyAboutMe: string,
+        mySkills: string,
+        geralBox: string,
+        inferior: string,
+        inferiorTitle: string
+    },
+    darkTheme: boolean,
 }
 
 const Works: React.FC<Props> = ({ allTheme, darkTheme }) => {
@@ -89,14 +99,14 @@ const Works: React.FC<Props> = ({ allTheme, darkTheme }) => {
                 activeStep={activeStep}
                 nextButton={
                     <Button style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}} size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-                        Next
+                        Próximo
                         {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
                     </Button>
                 }
                 backButton={
                     <Button style={!darkTheme ? {color: "#c0e0de"} : {color: "#c2b8b2"}} size="small" onClick={handleBack} disabled={activeStep === 0}>
                         {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-                        Back
+                        Anterior
                     </Button>
                 }
             />

@@ -4,7 +4,9 @@ import GRAPHQL from "../../../skillsImages/graphql-plain.svg"
 import PHP from "../../../skillsImages/php-plain.svg"
 import RUBY from "../../../skillsImages/ruby-original.svg"
 
-const TheFutureIcons: any = [
+import { Icon } from "../typeIcons"
+
+const TheFutureIcons: Icon[] = [
     {img: JAVA},
     {img: DJANGO},
     {img: GRAPHQL},

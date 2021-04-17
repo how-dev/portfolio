@@ -6,7 +6,9 @@ import REACT from "../../../skillsImages/react-original.svg"
 import REDUX from "../../../skillsImages/redux-original.svg"
 import GIT from "../../../skillsImages/git-plain.svg"
 
-const FrontIcons: any = [
+import { Icon } from "../typeIcons"
+
+const FrontIcons: Icon[]  = [
     {img: HTML},
     {img: CSS},
     {img: JS},

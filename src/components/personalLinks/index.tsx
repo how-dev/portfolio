@@ -1,7 +1,17 @@
 import React from "react";
 
 interface Props {
-    allTheme: any,
+    allTheme: {
+        primary: string,
+        secondary: string,
+        profilePhoto: string,
+        boxTitle: string,
+        bodyAboutMe: string,
+        mySkills: string,
+        geralBox: string,
+        inferior: string,
+        inferiorTitle: string
+    },
     myLink: string,
     Icon: any,
     content: string

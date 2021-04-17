@@ -141,7 +141,6 @@ export const Datas: React.FC = () => {
                      <Skills
                         key={index}
                         allTheme={allTheme}
-                        darkTheme={darkTheme}
                         Title={elt.Title}
                         workName={elt.workName}
                         content={elt.mySkills}

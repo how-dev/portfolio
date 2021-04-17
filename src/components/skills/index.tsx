@@ -2,10 +2,19 @@ import { Element } from "react-scroll";
 import React from "react";
 
 interface Props {
-    allTheme: any,
+    allTheme: {
+        primary: string,
+        secondary: string,
+        profilePhoto: string,
+        boxTitle: string,
+        bodyAboutMe: string,
+        mySkills: string,
+        geralBox: string,
+        inferior: string,
+        inferiorTitle: string
+    },
     Title: string,
     workName: string,
-    darkTheme: any,
     content: string,
 }
 

@@ -23,34 +23,34 @@ const TheSwitch = withStyles({
     track: {},
 })(Switch);
 
-export default function CustomizedSwitches() {
-    const darkTheme = useSelector((state: {color: boolean}) => state.color)
+const CustomizedSwitches: React.FC = () => {
+    const darkTheme: boolean = useSelector((state: {color: boolean}) => state.color)
     const dispatch = useDispatch();
     const sun = <Brightness5Icon />
     const moon = <NightsStayIcon />
 
-    const [dark, changeDark] = React.useState({
-        checkedA: true
-    });
+    const [dark, changeDark] = React.useState(true);
     const [label, changeLabel] = React.useState({icon: moon, state: "moon"})
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        changeDark({ checkedA: event.target.checked });
+        changeDark(event.target.checked);
         if (label.state === "moon") {
             changeLabel({icon: sun, state: "sun"})
         } else {
             changeLabel({icon: moon, state: "moon"})
         }
-        dispatch(changeTheme(dark.checkedA))
+        dispatch(changeTheme(dark))
     };
 
     return (
         <FormGroup>
             <FormControlLabel
                 style={!darkTheme ? {marginLeft: 20, color: "#C0E0DE"} : {marginLeft: 20, color: "#C2B8B2"}}
-                control={<TheSwitch checked={dark.checkedA} onChange={handleChange} name="checkedA" />}
+                control={<TheSwitch checked={dark} onChange={handleChange} name="checkedA" />}
                 label={label.icon}
             />
         </FormGroup>
     );
 }
+
+export default CustomizedSwitches

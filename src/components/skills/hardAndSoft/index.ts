@@ -1,6 +1,6 @@
 interface Skills {
     Title: string,
-    mySkills: any,
+    mySkills: string,
     workName: string,
 }
 

@@ -10,7 +10,7 @@ export const Icons: React.FC = () => {
     return (
         <div className="myIcons">
             <div className="FrontEndIcons">
-                {FrontIcons.map((elt: any, index: number) => {
+                {FrontIcons.map((elt: {img: string}, index: number) => {
                     return (
                         <img
                             src={elt.img}
@@ -22,7 +22,7 @@ export const Icons: React.FC = () => {
                 })}
             </div>
             <div className="BackEndIcons">
-                {BackIcons.map((elt: any, index: number) => {
+                {BackIcons.map((elt: {img: string}, index: number) => {
                     return (
                         <img
                             src={elt.img}
@@ -41,7 +41,7 @@ export const Icons: React.FC = () => {
 export const FutureIcons: React.FC = () => {
     return (
         <div className="myFutureIcons">
-            {TheFutureIcons.map((elt: any, index: number) => {
+            {TheFutureIcons.map((elt: {img: string}, index: number) => {
                 return (
                     <img
                         src={elt.img} alt="carregando..."
